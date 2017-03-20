@@ -1,0 +1,351 @@
+<!doctype html>
+<html>
+<head>
+	<title>My profile</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style>
+		body 		{ padding-top:80px; word-wrap:break-word; }
+		.heading{
+ position:absolute;
+ left:10%;
+ top:30px;
+ font-size: 30px;
+ background-color: #3B3738;
+ padding: 6px;  
+ color:#FDF3E7;  
+border-radius: 10px;
+}
+body {
+    background-color:#E9E581;
+    
+}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+body {
+  font-family: 'Open Sans', 'sans-serif';
+}
+.mega-dropdown {
+  position: static !important;
+}
+.mega-dropdown-menu {
+    padding: 20px 0px;
+    width: 100%;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.mega-dropdown-menu > li > ul {
+  padding: 0;
+  margin: 0;
+}
+.mega-dropdown-menu > li > ul > li {
+  list-style: none;
+}
+.mega-dropdown-menu > li > ul > li > a {
+  display: block;
+  color: #222;
+  padding: 3px 5px;
+}
+.mega-dropdown-menu > li ul > li > a:hover,
+.mega-dropdown-menu > li ul > li > a:focus {
+  text-decoration: none;
+}
+.mega-dropdown-menu .dropdown-header {
+  font-size: 18px;
+  color: #ff3546;
+  padding: 5px 60px 5px 5px;
+  line-height: 30px;
+}
+
+.carousel-control {
+  width: 30px;
+  height: 30px;
+  top: -35px;
+
+}
+.left.carousel-control {
+  right: 30px;
+  left: inherit;
+}
+.carousel-control .glyphicon-chevron-left, 
+.carousel-control .glyphicon-chevron-right {
+  font-size: 12px;
+  background-color: #fff;
+  line-height: 30px;
+  text-shadow: none;
+  color: #333;
+  border: 1px solid #ddd;
+}
+.navbar{
+position: absolute;
+top:0px !important;
+width: 100%;
+left:0px;
+
+
+}
+.dumbo{
+
+height: 100px;
+padding-top: 3px;`
+
+}
+	</style>
+	 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+</head>
+<body ng-app="app" ng-controller="ctrl">
+
+
+
+
+<br>
+
+<div class="container">
+
+	
+ <div class="container">
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+    	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="/details">BatteryBazar</a>
+	</div>
+	
+	<div class="collapse navbar-collapse js-navbar-collapse">
+		       <div class="col-sm-6 col-md-4 pull-right">
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+        	<li><a href="#">My cart (0) items</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My account <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+          	<li style="position:relative;left:40px;">Signed in as:</li>
+            <li><a href="/profile"><%= user.google.name %></a></li>
+            <li><a href="/settings">Settings</a></li>
+            <li><a href="#">Mycart</a></li>
+            <li class="divider"></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+	</div><!-- /.nav-collapse -->
+  </nav>
+</div>
+
+  <div class="row">
+    <div class="col-md-6 ">
+      <form class="form-horizontal" role="form" method="Post" action="/submit">
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend>Edit Informations</legend>
+
+          <!-- Text input-->
+           <div class="form-group">
+
+            <label class="col-sm-2 control-label" for="textinput">name</label>
+            <div class="col-sm-10">
+              <input type="text" placeholder="username" name="username" length="6" class="form-control">
+            </div>
+          </div>
+               <div class="form-group">
+
+            <label class="col-sm-2 control-label" for="textinput">email</label>
+            <div class="col-sm-10">
+              <input type="text" placeholder="username" name="email" length="6" class="form-control">
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="textinput">Flat</label>
+            <div class="col-sm-10">
+              <input type="text" placeholder="Address Line 1" name="flat" class="form-control">
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="textinput">Locality</label>
+            <div class="col-sm-10">
+              <input type="text" placeholder="Address Line 2" class="form-control">
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="textinput">City</label>
+            <div class="col-sm-10">
+              <input type="text" placeholder="City" name="city" class="form-control">
+            </div>
+          </div>
+           <div class="form-group">
+            <label class="col-sm-2 control-label" for="textinput">Mobile Number</label>
+            <div class="col-sm-10">
+              <input type="text" placeholder="Mobile Number" name="mobile"class="form-control">
+            </div>
+          </div>
+             <div class="form-group">
+            <label class="col-sm-2 control-label"  for="textinput">Date of Birth</label>
+            <div class="col-sm-10">
+             <select name="dob">
+	<option> - Month - </option>
+	<option value="January">January</option>
+	<option value="Febuary">Febuary</option>
+	<option value="March">March</option>
+	<option value="April">April</option>
+	<option value="May">May</option>
+	<option value="June">June</option>
+	<option value="July">July</option>
+	<option value="August">August</option>
+	<option value="September">September</option>
+	<option value="October">October</option>
+	<option value="November">November</option>
+	<option value="December">December</option>
+</select>
+
+<select name="dob">
+	<option> - Day - </option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+	<option value="26">26</option>
+	<option value="27">27</option>
+	<option value="28">28</option>
+	<option value="29">29</option>
+	<option value="30">30</option>
+	<option value="31">31</option>
+</select>
+
+<select name="dob">
+	<option> - Year - </option>
+  <option value="1993">1997</option>
+  <option value="1992">1996</option>
+  <option value="1991">1995</option>
+  <option value="1990">1994</option>
+	<option value="1993">1993</option>
+	<option value="1992">1992</option>
+	<option value="1991">1991</option>
+	<option value="1990">1990</option>
+	<option value="1989">1989</option>
+	<option value="1988">1988</option>
+	<option value="1987">1987</option>
+	<option value="1986">1986</option>
+	<option value="1985">1985</option>
+	<option value="1984">1984</option>
+	<option value="1983">1983</option>
+	<option value="1982">1982</option>
+	<option value="1981">1981</option>
+	<option value="1980">1980</option>
+	<option value="1979">1979</option>
+	<option value="1978">1978</option>
+	<option value="1977">1977</option>
+	<option value="1976">1976</option>
+	<option value="1975">1975</option>
+	<option value="1974">1974</option>
+	<option value="1973">1973</option>
+	<option value="1972">1972</option>
+	<option value="1971">1971</option>
+	<option value="1970">1970</option>
+	<option value="1969">1969</option>
+	<option value="1968">1968</option>
+	<option value="1967">1967</option>
+	<option value="1966">1966</option>
+	<option value="1965">1965</option>
+	<option value="1964">1964</option>
+	<option value="1963">1963</option>
+	<option value="1962">1962</option>
+	<option value="1961">1961</option>
+	<option value="1960">1960</option>
+	<option value="1959">1959</option>
+	<option value="1958">1958</option>
+	<option value="1957">1957</option>
+	<option value="1956">1956</option>
+	<option value="1955">1955</option>
+	<option value="1954">1954</option>
+	<option value="1953">1953</option>
+	<option value="1952">1952</option>
+	<option value="1951">1951</option>
+	<option value="1950">1950</option>
+	<option value="1949">1949</option>
+	<option value="1948">1948</option>
+	<option value="1947">1947</option>
+	
+</select>
+            </div>
+          </div>
+
+
+
+          <!-- Text input-->
+     
+
+          <div class="form-group" >
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="pull-right">
+                
+                <button type="submit" class="btn btn-primary">submit</button>
+              </div>
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+    </div><!-- /.col-lg-12 -->
+</div><!-- /.row -->
+	
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    $(".dropdown").hover(            
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+            $(this).toggleClass('open');        
+        },
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+            $(this).toggleClass('open');       
+        }
+    );
+});
+
+</script>
+
+
+</body>
+</html>
